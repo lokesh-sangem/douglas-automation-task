@@ -9,12 +9,15 @@ export class FiltersPage {
 
   constructor(page: Page) {
     this.page = page;
-     this.productTypeButton= page.locator("button[data-testid*='classificationClassName']:has-text('Produktart')");
+    this.productTypeButton = page.locator(
+      "button[data-testid*='classificationClassName']:has-text('Produktart')"
+    );
 
-    this.brandButton=page.getByTestId('menu-button-brand');
-    this.giftForButton = page.getByRole('button', { name: 'Geschenk für' }); //
-    this.genderButton = page.locator( "button[data-testid*='menu-button-gender']:has-text('Für Wen')");
-
+    this.brandButton = page.getByTestId("menu-button-brand");
+    this.giftForButton = page.getByRole("button", { name: "Geschenk für" }); //
+    this.genderButton = page.locator(
+      "button[data-testid*='menu-button-gender']:has-text('Für Wen')"
+    );
   }
 
   async clickProductType() {
@@ -22,8 +25,8 @@ export class FiltersPage {
   }
 
   async clickBrand() {
-   // await this.brandButton.waitFor({state:'visible'});
-        await this.brandButton.scrollIntoViewIfNeeded();
+    // await this.brandButton.waitFor({state:'visible'});
+    await this.brandButton.scrollIntoViewIfNeeded();
     await this.brandButton.click();
   }
 
